@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Instalar dependencias') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Construcción completada (Python no necesita compilación)'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'pytest tests/'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Despliegue simulado: aplicación lista para producción'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline terminado'
+        }
+    }
+}
