@@ -53,9 +53,10 @@ pipeline {
                 // El punto '.' indica que analice el directorio actual.
                 // Puedes añadir opciones como --max-line-length=120 etc.
                 bat """
-                        set pythonScriptsDir = "C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts"
-                        set PATH="%PATH%;%pythonScriptsDir%"
-                        flake8 .
+                        echo 'Ejecutando análisis de código con flake8...'
+                        bat 'set PATH="%PATH%;C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts"'
+                        bat 'echo %PATH%' // Verificar si se actualizó
+                        bat 'flake8 .'
                     """
             }
         }
