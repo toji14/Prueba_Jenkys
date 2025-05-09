@@ -33,7 +33,7 @@ pipeline {
                 echo 'Instalando dependencias (del requirements.txt)...'
                 // Ejecuta el comando pip para instalar las dependencias.
                 // Asegúrate de que el agente tenga Python y pip instalados.
-                bat 'pip install -r requirements.txt'
+                bat 'py -m pip install -r requirements.txt'
             }
         }
 
