@@ -54,7 +54,7 @@ pipeline {
                 // Puedes añadir opciones como --max-line-length=120 etc.
                 bat """
                         echo 'Ejecutando análisis de código con flake8...'
-                        bat 'set PATH="%PATH%;C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts"'
+                        bat 'set PATH="%PATH%;C:\Users\User A1\AppData\Local\Programs\Python\Python313\Scripts"'
                         bat 'echo %PATH%' // Verificar si se actualizó
                         bat 'flake8 .'
                     """
