@@ -55,6 +55,7 @@ pipeline {
                 bat """
                         set PATH="%PATH%;C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts"
                         echo %PATH%
+                        dir
                         flake8 .
                     """
             }
