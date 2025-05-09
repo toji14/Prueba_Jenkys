@@ -33,7 +33,7 @@ pipeline {
                 echo 'Instalando dependencias (del requirements.txt)...'
                 // Ejecuta el comando pip para instalar las dependencias.
                 // Asegúrate de que el agente tenga Python y pip instalados.
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
@@ -45,7 +45,7 @@ pipeline {
                 // Ejecuta flake8 (asumiendo que está en requirements.txt o instalado).
                 // El punto '.' indica que analice el directorio actual.
                 // Puedes añadir opciones como --max-line-length=120 etc.
-                sh 'flake8 .'
+                bat 'flake8 .'
             }
         }
 
@@ -67,7 +67,7 @@ pipeline {
                 echo 'Ejecutando pruebas con pytest...'
                 // Ejecuta pytest para correr las pruebas encontradas en la carpeta TESTS.
                 // --junitxml report.xml genera un archivo de resultados que Jenkins puede usar.
-                sh 'pytest --junitxml report.xml TESTS/'
+                bat 'pytest --junitxml report.xml TESTS/'
             }
             // Post-acciones específicas para esta etapa: archivar resultados de pruebas.
             post {
