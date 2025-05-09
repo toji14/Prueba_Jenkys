@@ -43,6 +43,12 @@ pipeline {
                 bat 'echo %PATH%'
             }
         }
+
+        stage('Verificar Flake8') {
+            steps {
+                bat 'dir "C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts\\\\flake8.exe"'
+            }
+        }
         
         // Etapa para realizar análisis de código estático (linting).
         // Ayuda a mantener la calidad y el estilo del código.
