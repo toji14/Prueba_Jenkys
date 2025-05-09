@@ -45,7 +45,10 @@ pipeline {
                 // Ejecuta flake8 (asumiendo que está en requirements.txt o instalado).
                 // El punto '.' indica que analice el directorio actual.
                 // Puedes añadir opciones como --max-line-length=120 etc.
-                bat 'flake8 .'
+                bat """
+                        set PATH="%PATH%;C:\\Users\\User A1\\AppData\\Local\\Programs\\Python\\Python313\\Scripts"
+                        flake8 .
+                    """
             }
         }
 
