@@ -37,6 +37,13 @@ pipeline {
             }
         }
 
+        stage('Verificar PATH') {
+            steps {
+                echo 'Verificando la variable PATH...'
+                bat 'echo %PATH%'
+            }
+        }
+        
         // Etapa para realizar análisis de código estático (linting).
         // Ayuda a mantener la calidad y el estilo del código.
         stage('Linting') {
