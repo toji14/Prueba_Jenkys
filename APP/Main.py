@@ -1,5 +1,7 @@
 """devuelve un mensaje"""
 
+# Aquí agregamos una línea en blanco (Línea 2)
+
 def saludar(nombre):
     """
     Devuelve un saludo.
@@ -12,6 +14,7 @@ def saludar(nombre):
     else:
         return "Hola, Mundo!"
 
-# Esto permite ejecutar la función si corres el archivo directamente
+# Aquí agregamos una línea en blanco (Línea 15)
+
 if __name__ == "__main__":
     print(saludar("Usuario Jenkins"))
