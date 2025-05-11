@@ -78,7 +78,7 @@ pipeline {
                 echo 'Ejecutando pruebas con pytest...'
                 // Ejecuta pytest para correr las pruebas encontradas en la carpeta TESTS.
                 // --junitxml report.xml genera un archivo de resultados que Jenkins puede usar.
-                bat 'pytest --junitxml report.xml TESTS/'
+                bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m pytest --junitxml report.xml TESTS/'
             }
             // Post-acciones específicas para esta etapa: archivar resultados de pruebas.
             post {
