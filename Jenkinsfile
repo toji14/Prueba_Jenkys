@@ -53,10 +53,10 @@ pipeline {
                 // El punto '.' indica que analice el directorio actual.
                 // Puedes añadir opciones como --max-line-length=120 etc.
                 bat """
-                        dir
-                        echo "---"
-                        '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m flake8 APP'
-                    """
+                       dir
+                       echo "---"
+                       "C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m flake8 APP"
+                """
             }
         }
 
