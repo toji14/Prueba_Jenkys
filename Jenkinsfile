@@ -55,7 +55,7 @@ pipeline {
                 bat """
                         dir
                         echo "---"
-                        bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m flake8 APP'
+                        '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m flake8 APP'
                     """
             }
         }
