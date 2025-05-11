@@ -59,7 +59,7 @@ pipeline {
                 // El punto '.' indica que analice el directorio actual.
                 // Puedes añadir opciones como --max-line-length=120 etc.
                 bat """
-                        set PATH="%PATH%;C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\Scripts"
+                        bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m flake8 APP'
                         echo %PATH%
                         flake8 APP
                     """
