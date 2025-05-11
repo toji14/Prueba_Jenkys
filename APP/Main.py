@@ -1,6 +1,5 @@
 """devuelve un mensaje"""
 
-# Aquí agregamos una línea en blanco (Línea 2)
 
 def saludar(nombre):
     """
@@ -14,7 +13,6 @@ def saludar(nombre):
     else:
         return "Hola, Mundo!"
 
-# Aquí agregamos una línea en blanco (Línea 15)
 
 if __name__ == "__main__":
     print(saludar("Usuario Jenkins"))
