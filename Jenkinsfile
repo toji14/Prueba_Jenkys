@@ -75,19 +75,16 @@ pipeline {
         // Etapa para ejecutar las pruebas unitarias y de integración.
         stage('Test') {
             steps {
-                echo 'Ejecutando pruebas con pytest...'
-                // Ejecuta pytest para correr las pruebas encontradas en la carpeta TESTS.
-                // --junitxml report.xml genera un archivo de resultados que Jenkins puede usar.
-                bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m pytest --junitxml report.xml TESTS/'
+                script {
+                    env.PYTHONPATH = "${WORKSPACE}"
+                    echo "PYTHONPATH is: ${env.PYTHONPATH}" // Para depuración
+                    bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m pytest --junitxml report.xml TESTS/'
+                }
             }
-            // Post-acciones específicas para esta etapa: archivar resultados de pruebas.
             post {
-                // Siempre intenta archivar el reporte de pruebas si se generó.
                 always {
                     echo 'Archivando resultados de pruebas...'
-                    // El plugin de JUnit en Jenkins puede leer este archivo.
                     junit 'report.xml'
-                    // También puedes archivar el archivo como un artefacto general
                     archiveArtifacts artifacts: 'report.xml', fingerprint: true, allowEmptyArchive: true
                 }
             }
