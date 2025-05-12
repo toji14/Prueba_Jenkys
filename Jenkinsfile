@@ -77,8 +77,9 @@ pipeline {
             steps {
                 script {
                     env.PYTHONPATH = "${WORKSPACE}"
-                    echo "PYTHONPATH is: ${env.PYTHONPATH}"                    
-                    bat "\"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m pytest --junitxml report.xml ${env.WORKSPACE}/TESTS\""
+                    echo "PYTHONPATH is: ${env.PYTHONPATH}"
+                    sh "cd ${WORKSPACE}" // Cambia el directorio de trabajo a la raíz
+                    bat "\"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m pytest --junitxml report.xml TESTS\""
                 }
             }
             post {
