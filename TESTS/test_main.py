@@ -1,4 +1,9 @@
-"""Importa la función que quieres probar desde el archivo main.py"""
+import sys
+import os
+
+# Agrega el directorio del proyecto al sys.path
+sys.path.append(os.getcwd())
+print(f"sys.path: {sys.path}") # Para depuración
 
 # Asegúrate que la ruta de importación sea correcta según la estructura de tu proyecto
 from APP.main import saludar
