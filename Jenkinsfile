@@ -77,9 +77,8 @@ pipeline {
             steps {
                 script {
                     env.PYTHONPATH = "${WORKSPACE}"
-                    echo "PYTHONPATH is: ${env.PYTHONPATH}"
-                    bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -c "import sys; print(sys.path)"'
-                    bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m pytest --junitxml report.xml ./'
+                    echo "PYTHONPATH is: ${env.PYTHONPATH}"                    
+                    bat '"C:\\\\Users\\\\User A1\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe" -m pytest --junitxml report.xml ${WORKSPACE}/TESTS"'
                 }
             }
             post {
