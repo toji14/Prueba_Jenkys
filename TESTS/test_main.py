@@ -6,7 +6,7 @@ sys.path.append(os.getcwd())
 print(f"sys.path: {sys.path}") # Para depuración
 
 # Asegúrate que la ruta de importación sea correcta según la estructura de tu proyecto
-from APP.main import saludar
+from APP.Main import saludar
 
 def test_saludar_con_nombre():
     """Prueba que la función salude correctamente con un nombre."""
