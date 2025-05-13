@@ -1,2 +1,2 @@
-# Prueba_Jenkys
-Proyecto de prueba de Jenkys
+# Proyecto_Jenkys
+Proyecto de Jenkys UG
