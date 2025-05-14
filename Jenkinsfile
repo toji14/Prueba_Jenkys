@@ -116,13 +116,13 @@ pipeline {
         success {
             echo '✅ Pipeline finalizado con éxito.'
             // Aquí puedes añadir notificaciones de éxito (correo, Slack, etc.)
-            // mail to: 'tu.correo@example.com', subject: "Pipeline ${currentBuild.fullDisplayName} Exitoso!"
+            slackSend channel: '#todo-uggrupo-c', message: "El pipeline fue ejecutado sin problemas. Build: ${env.BUILD_NUMBER}", teamDomain: 'uggrupoc', tokenCredentialId: 'slack1'
         }
         // Bloque que se ejecuta si el pipeline falló en alguna etapa.
         failure {
             echo '❌ Pipeline fallido.'
             // Aquí puedes añadir notificaciones de fallo (correo, Slack, etc.)
-            // mail to: 'tu.correo@example.com', subject: "Pipeline ${currentBuild.fullDisplayName} Fallido!", body: "El pipeline falló. Consulta el log: ${env.BUILD_URL}"
+            slackSend channel: '#todo-uggrupo-c', message: "¡ERROR! El pipeline ha fallado. Build: ${env.BUILD_NUMBER}. Revisa Jenkins: ${env.BUILD_URL}", teamDomain: 'uggrupoc', tokenCredentialId: 'slack1'
         }
         // Bloque que se ejecuta siempre, sin importar el resultado (éxito, fallo, abortado).
         always {
